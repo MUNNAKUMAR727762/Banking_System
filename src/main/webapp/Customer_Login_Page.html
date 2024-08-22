@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--=============== REMIXICONS ===============-->
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css"
+    crossorigin="">
+
+<link rel="stylesheet" href="CSS/Customer_Login_Page.css">
+ 
+
+<title>Banking Customer Login Page</title>
+</head>
+<body>
+    <div class="login">
+        <img
+            src="https://newmibridges.michigan.gov/resource/1711191647000/ISD_Icons/landing-page/group-3.svg"
+            alt="image" class="login__bg">
+        <i class="ri-bank-fill" style="font-size: 3rem; color: var(--white-color); text-align: center; margin-bottom: 1rem;"></i>
+        <form action="Customer_Login_Page" method="post" class="login__form">
+            <!-- Modified action attribute -->
+            <h1 class="login__title">Banking Customer Login</h1>
+            <div class="login__inputs">
+                <div class="login__box">
+                    <input type="text" name="account" placeholder="Account No" required
+                        class="login__input">
+                    <!-- Added name attribute -->
+                    <i class="ri-user-fill"></i>
+                </div>
+                <div class="login__box">
+                    <input type="password" id="dob" name="password" required
+                        placeholder="Your Password" class="login__input">
+                    <!-- Added name attribute -->
+                    <i class="ri-lock-2-fill"></i>
+                </div>
+            </div>
+            <button type="submit" class="login__button">Login</button>
+            <p class="login__register" style="color: black;"> <a href="Reset_Password.html" style="color: black;">Reset Password</a></p>
+
+        </form>
+         
+    </div>
+</body>
+</html>

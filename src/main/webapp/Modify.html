@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modify Data</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="CSS/Form.css">
+ 
+</head>
+<body>
+<h2>Modify Existing Data</h2>
+<form id="modifyForm" action="Modify" method="post" onsubmit="return validateFormData()">
+    <p class="note">Note: Mobile Number must remain the same in order to modify other details.</p>
+    <hr>
+    <label for="fullName"><i class="fas fa-user icon"></i>Full Name:</label>
+    <input type="text" id="fullName" name="fullName" required><br>
+    <label for="address"><i class="fas fa-map-marker-alt icon"></i>Address:</label>
+    <input type="text" id="address" name="address" required><br>
+    <label for="mobileNo"><i class="fas fa-phone icon"></i>Mobile Number:</label>
+    <input type="text" id="mobileNo" name="mobileNo" required><br>
+    <label for="email"><i class="fas fa-envelope icon"></i>Email:</label>
+    <input type="email" id="email" name="email" required><br>
+    <label for="accountType"><i class="fas fa-credit-card icon"></i>Account Type:</label>
+    <select id="accountType" name="accountType" required>
+        <option value="Saving">Saving</option>
+        <option value="Current">Current</option>
+    </select><br>
+    <label for="balance"><i class="fas fa-money-bill icon"></i>Balance:</label>
+    <input type="number" id="balance" name="balance" required><br>
+    <label for="dob"><i class="fas fa-calendar-alt icon"></i>Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br>
+    <!-- Added ID Proof input -->
+    <label for="idProof"><i class="fas fa-id-card icon"></i>ID Proof:</label>
+    <select id="idProof" name="idProof" required>
+        <option value="Aadhar">Aadhar Card</option>
+        <option value="PAN">PAN Card</option>
+    </select><br>
+    <!-- Added input for ID Proof Number -->
+    <label for="idProofNumber"><i class="fas fa-id-card icon"></i>ID Proof Number:</label>
+    <input type="text" id="idProofNumber" name="idProofNumber" required><br>
+    <input type="submit" value="Modify Data">
+</form>
+
+ <script>
+//Function to validate form data
+function validateFormData() {
+    var fullName = document.getElementById("fullName").value;
+    var address = document.getElementById("address").value;
+    var mobileNo = document.getElementById("mobileNo").value;
+    var email = document.getElementById("email").value;
+    var accountType = document.getElementById("accountType").value;
+    var balance = document.getElementById("balance").value;
+    var dob = document.getElementById("dob").value;
+    var idProof = document.getElementById("idProof").value;
+    var idProofNumber = document.getElementById("idProofNumber").value; // Corrected ID access
+
+    var error = "";
+
+    if (!fullName.trim()) {
+        error += "Full Name is required.\n";
+    }
+    if (!address.trim()) {
+        error += "Address is required.\n";
+    }
+    if (!mobileNo.trim() || mobileNo.length !== 10 || isNaN(mobileNo)) {
+        error += "Mobile Number must be 10 digits.\n";
+    }
+    if (!email.trim() || !validateEmail(email)) {
+        error += "Valid Email is required.\n";
+    }
+    if (!accountType.trim()) {
+        error += "Account Type is required.\n";
+    }
+    if (balance.trim() === "" || balance < 1000) {
+        error += "Balance should be at least 1000.\n";
+    }
+    if (!dob.trim()) {
+        error += "Date of Birth is required.\n";
+    }
+    // Additional validation for ID Proof
+    if (idProof === "Aadhar") {
+        if (idProofNumber.trim().length !== 12 || isNaN(idProofNumber)) {
+            error += "Aadhar Number must be 12 digits.\n";
+        }
+    } else if (idProof === "PAN") {
+        var panRegex = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+        if (!panRegex.test(idProofNumber)) {
+            error += "Invalid PAN Number format.\n";
+        }
+    }
+
+    if (error !== "") {
+        alert(error);
+        return false;
+    }
+
+    return true;
+}
+
+// Function to validate email format
+function validateEmail(email) {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
+</script>
+</body>
+</html>

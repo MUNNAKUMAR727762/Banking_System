@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/money-saving-concept_52683-7986.jpg?t=st=1720206676~exp=1720210276~hmac=5e86635919538d12c636f028523d9dbdf66ffd87222d977056e2d49fb6147139&w=900');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+            margin: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            width: 400px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 30px;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            color: white;
+            width: 250px;
+            background-color: #4CAF50; /* Default button color */
+        }
+
+        button#adminBtn {
+            background-color: #f44336; /* Red for Admin button */
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .button-text {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        footer .company-name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="IMG/Samanvay_Logo.png" alt="Samanvay eBanking Logo">
+        </div>
+        <h1>Welcome to eBanking Platform</h1>
+        <div class="button-container">
+            <button id="employeeBtn">
+                <span class="button-text">Customer_Dashboard</span>
+                <!-- <img src="https://via.placeholder.com/24/FFFFFF/000000?text=E" alt="Employee Icon"> -->
+            </button>
+            <button id="adminBtn">
+                <span class="button-text">Admin_Dashboard</span>
+                <!-- <img src="https://via.placeholder.com/24/FFFFFF/000000?text=A" alt="Admin Icon"> -->
+            </button>
+        </div>
+        <footer>
+             
+            <p>&copy; 2024 <span class="company-name">Samanvay eBanking</span>. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        document.getElementById('employeeBtn').addEventListener('click', function() {
+            window.location.href = "Customer_Login_Page.html"; // Redirect to employee page
+        });
+
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            window.location.href = "Admin_Login_Page.html"; // Redirect to admin page
+        });
+    </script>
+</body>
+</html>

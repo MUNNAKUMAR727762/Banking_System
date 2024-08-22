@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="CSS/C_Dashboard.css">
+</head>
+<body>
+
+<div class="container">
+    <button class="sidebar-toggle" onclick="toggleSidebar()">&#9776;</button>
+    <nav class="sidebar" id="sidebar">
+        <div class="logo">
+            <i class="fas fa-piggy-bank"></i>
+            <span>Banking</span>
+        </div>
+        <ul class="menu">
+            <li class="menu-item">
+                <a href="#" onclick="loadContent('PersonalInformation.jsp')">
+                    <i class="fas fa-user"></i>
+                    Personal Information
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" onclick="loadContent('Deposit.jsp')">
+                    <i class="fas fa-coins"></i>
+                    Deposit
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" onclick="loadContent('Withdraw.jsp')">
+                    <i class="fas fa-money-bill-wave"></i>
+                    Withdraw
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="transactionHistory.jsp" onclick="loadContent('transactionHistory.jsp')">
+                    <i class="fas fa-list-alt"></i>
+                    View Transactions
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" onclick="loadContent('View Balance.jsp')">
+                    <i class="fas fa-coins"></i>
+                    View Current Balance
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#" onclick="loadContent('Close_Account.jsp')">
+                    <i class="fas fa-window-close"></i>
+                    Close Account
+                </a>
+            </li>
+           <li class="menu-item">
+    <a>
+         
+        <form action="Logout" method="get">
+        <input type="submit" value="Logout1">
+    </form>
+    </a>
+</li>
+        </ul>
+    </nav>
+    <div class="content" id="content-placeholder">
+        <!-- Content will be loaded here -->
+    </div>
+</div>
+
+<script src="Javascript/C_Dashboard.js"></script>
+</body>
+</html>

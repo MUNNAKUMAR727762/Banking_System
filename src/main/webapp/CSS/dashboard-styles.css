@@ -1,0 +1,132 @@
+/* CSS file: dashboard-styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #007BFF;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 2px solid #007BFF;
+}
+
+ 
+.section-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.details-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.details-item i.icon {
+  color: #007BFF;
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+.details-item strong {
+  min-width: 120px;
+  color: #777;
+  font-weight: bold;
+}
+
+.details-item span {
+  color: #333;
+  font-weight: normal;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .dashboard-container {
+    border-radius: 0;
+    box-shadow: none;
+    padding: 10px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+    border-bottom: none;
+    padding: 10px 0;
+    margin-bottom: 10px;
+  }
+
+  .dashboard-section {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .details-item i.icon {
+    font-size: 20px;
+  }
+
+  .details-item strong {
+    min-width: auto;
+    margin-bottom: 5px;
+  }
+}
+
+        /* Input field styles */
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        /* Button styles */
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for button */
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Details item styles */
+        .details-item {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        /* Icon styles */
+        .details-item i {
+            margin-right: 5px;
+            color: #555;
+        }
+
+        /* User information styles */
+        .user-info {
+            margin-bottom: 20px;
+        }

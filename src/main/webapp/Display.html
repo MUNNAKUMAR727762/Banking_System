@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display Data</title>
+<link rel="stylesheet" href="CSS/Display.css">
+<script>
+    // Function to navigate back to Admin.html
+    function goToAdminDashboard() {
+        window.location.href = 'Admin.html';
+    }
+</script>
+</head>
+<body>
+    <div class="container">
+        <h2>Existing Data in the Database</h2>
+        <iframe src="DisplayData"></iframe>
+        <button onclick="goToAdminDashboard()" class="back-button">Back to Dashboard</button>
+    </div>
+</body>
+</html>
